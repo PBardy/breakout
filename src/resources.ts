@@ -1,8 +1,10 @@
-import { ImageSource } from "excalibur";
-import sword from "./images/sword.png"; // for parcelv2 this is configured in the .parcelrc
+import { ImageSource } from 'excalibur';
+import sword from './images/sword.png';
+import brick from './images/brick.png';
 
 let Resources = {
-  Sword: new ImageSource(sword)
+  Sword: new ImageSource(sword),
+  Brick: new ImageSource(brick),
 };
 
 export { Resources };

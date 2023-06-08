@@ -1,20 +1,15 @@
-import { Engine, Loader } from "excalibur";
-import { Player } from "./player";
-import { Resources } from "./resources";
+import './style.css';
+import { Loader } from 'excalibur';
+import { Resources } from './resources';
+import { Game } from './game';
 
-class Game extends Engine {
-    constructor() {
-      super({width: 800, height: 600});
-    }
-    initialize() {
-      
-      const player = new Player();
-      this.add(player);
+/**
+ * Resources
+ */
+const loader = new Loader();
+loader.addResource(Resources.Brick);
+loader.load();
 
-      const loader = new Loader([Resources.Sword]);
-      this.start(loader);
-    }
-  }
-  
-  export const game = new Game();
-  game.initialize();
+const game = new Game();
+game.goToScene('main');
+game.start(loader);
